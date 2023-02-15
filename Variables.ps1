@@ -7,5 +7,11 @@ function EnvPathToFile()
     $Env:Path | Out-File -FilePath .\EnvPath.txt
     Start .\EnvPath.txt
 }
+#EnvPathToFile
 
-EnvPathToFile
+function EnvPathSplit()
+{
+    $eachPath = $Env:Path -split ";"
+    $eachPath
+}
+EnvPathSplit
