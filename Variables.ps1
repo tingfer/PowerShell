@@ -14,4 +14,11 @@ function EnvPathSplit()
     $eachPath = $Env:Path -split ";"
     $eachPath
 }
-EnvPathSplit
+#EnvPathSplit
+
+function EnvPathInclude()
+{
+    param([String]$Exe)
+    EnvPathSplit | select-string $Exe
+}
+EnvPathInclude "ImageMagick"
